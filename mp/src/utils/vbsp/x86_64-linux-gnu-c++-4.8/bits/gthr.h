@@ -27,7 +27,7 @@ see the files COPYING3 and COPYING.RUNTIME respectively.  If not, see
 #define _GLIBCXX_GCC_GTHR_H
 
 #ifndef _GLIBCXX_HIDE_EXPORTS
-#pragma GCC visibility push(default)
+// #pragma GCC visibility push(default)
 #endif
 
 /* If this file is compiled with threads support, it must
@@ -148,7 +148,7 @@ see the files COPYING3 and COPYING.RUNTIME respectively.  If not, see
 #include <bits/gthr-default.h>
 
 #ifndef _GLIBCXX_HIDE_EXPORTS
-#pragma GCC visibility pop
+// #pragma GCC visibility pop
 #endif
 
 #endif /* ! _GLIBCXX_GCC_GTHR_H */
