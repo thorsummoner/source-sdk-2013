@@ -422,7 +422,7 @@ bool GetVTFPreload360Data( const char *pDebugName, CUtlBuffer &fileBufferIn, CUt
 
 #include "datamap.h"
 
-#pragma pack(1)
+// #pragma pack(1)
 
 // version number for the disk texture cache
 #define VTF_MAJOR_VERSION 7
@@ -603,6 +603,6 @@ struct TextureSettingsEx_t
 
 #define VTF_RSRC_TEXTURE_CRC ( MK_VTF_RSRC_ID( 'C','R','C' ) )
 
-#pragma pack()
+// #pragma pack()
 
 #endif // VTF_H

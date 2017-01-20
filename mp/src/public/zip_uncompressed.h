@@ -18,7 +18,7 @@
 #define ZIP_COMPRESSION_NONE  0
 #define ZIP_COMPRESSION_LZMA 14
 
-#pragma pack(1)
+// #pragma pack(1)
 
 struct ZIP_EndOfCentralDirRecord
 {
@@ -112,6 +112,6 @@ struct ZIP_PreloadRemapTable
 	unsigned short PreloadIndex;			// Index into preload directory, entry marked invalid if no preload entry present
 };
 
-#pragma pack()
+// #pragma pack()
 
 #endif // ZIP_UNCOMPRESSED_H
