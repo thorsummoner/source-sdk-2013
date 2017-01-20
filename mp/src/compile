@@ -1,0 +1,37 @@
+#!/usr/bin/env python
+
+import os
+import pprint
+import subprocess
+import sys
+
+ROOT = os.path.dirname(__file__)
+INCLUDE_PATHS = [
+    'public',
+    'public/tier0',
+    'public/tier1',
+    'utils/common',
+
+    # Copied /usr/include/x86_64-linux-gnu/c++/4.8/bits/
+    # Copied /usr/include/c++/4.8/bits/
+    # Removed Pragma syntax errors
+    # 'x86_64-linux-gnu-c++-4.8',
+    # 'c++-4.8',
+]
+
+include_paths = [os.path.join(ROOT, i) for i in INCLUDE_PATHS]
+
+env = os.environ.copy()
+env.update({
+    # 'CPPFLAGS': '-std=c++11',
+    'CXXFLAGS': '-static',
+    # 'LDFLAGS': ' -L' + ' -L'.join(include_paths),
+    # 'CFLAGS': ' -I' + ' -I'.join(include_paths),
+    'CPLUS_INCLUDE_PATH': ':'.join(include_paths),
+    # 'C_INCLUDE_PATH': ':'.join(include_paths),
+    # 'LD_LIBRARY_PATH': ':'.join(include_paths),
+    # 'LIBRARY_PATH': ':'.join(include_paths),
+})
+
+# pprint.pprint(env)
+subprocess.call(['make', sys.argv[1]], env=env)
